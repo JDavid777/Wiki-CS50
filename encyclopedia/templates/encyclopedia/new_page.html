@@ -1,0 +1,12 @@
+{% extends 'encyclopedia/layout.html'%}
+
+{% block body%}
+    <h1>Text Editor <spam>(Markdown Only)</spam></h1>
+    <form action="{% url "new_entry" %}" method="POST"> {% csrf_token %}
+        <div class="title-save">
+            <input class="title" type="text" name="title" id="" placeholder="Title" required autofocus>
+            <input class="button-save" type="submit" value="Save">
+        </div>
+        <textarea class="textarea" name="markdown" required id="" cols="30" rows="10"></textarea>
+    </form>
+{%endblock body%}
