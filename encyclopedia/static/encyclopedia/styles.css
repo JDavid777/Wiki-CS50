@@ -62,23 +62,68 @@ spam{
 }
 .button-save{
     position: absolute;;  
-    top:0;
+    top:1.2em;
     right: 0;
     background-color:hsl(200, 93%, 72%);
-    color:black;
+    color:hsla(0,0,100%,.5);
     border-radius: 5%;
+    border-color: transparent;
     width: 5em;
-    font-size: 2em;
+    font-size: 1em;
 }
 .button-save:hover{
     background-color: hsla(200, 93%, 72%,.7);
 }
+.button-save:active{
+    outline: none;
+    border-color: transparent;
+    background-color:hsl(200, 58%, 50%,.5);
+}
 .title-save{
     position:relative;
     width: 80%;
+  
+    height: 3.5em;
+
 }
 
 .title:hover{
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.322);
     outline: none;
+}
+
+.edit{
+    position: absolute;
+    right:3em;
+}
+div>.alien{
+    text-align: center;
+    position: relative;
+    left:25%;
+}
+.back{
+    
+    position:relative;
+    top:8em;
+    left:1.5em;
+    font-size: 1.5em;
+    color:black;
+    background-color: grey;
+    border-radius: 3px;
+    border-top-right-radius: 90%; 
+    border-top-left-radius: 90%; 
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.466);
+    transition: box-shadow  2s, background-color 2s, padding-top 3s, border-radius 5s, color 3s;
+
+}
+.back:hover{
+    box-shadow: 0 -20px 50px 30px rgba(0, 0, 0, 0.466) ;
+    background-color: rgba(0, 0, 0, 0);
+    padding-top: 2em;
+    border-top-right-radius: 100%; 
+    border-top-left-radius: 100%; 
+    border-bottom-right-radius: 80%; 
+    border-bottom-left-radius: 80%; 
+   
+    color:rgba(102, 221, 241, 0.041);
 }

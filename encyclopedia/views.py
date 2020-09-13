@@ -13,20 +13,20 @@ def entry(request,title):
         return render(request,"encyclopedia/entry.html",{"title":title, "entry":html_entry})
     else:
         html_entry="<h1><i class='material-icons'>error</i> Sorry, the page you requested was not found.</h1>"
-        return render(request,"encyclopedia/entry.html",{"title":"error", "entry":html_entry})
+        return render(request,"encyclopedia/error.html",{"title":"error", "entry":html_entry})
 
 def search_entry(request):   
     data=request.GET['q']
     html_entry=util.get_html(data)
     if(html_entry is not None):
-        return render(request,"encyclopedia/entry.html",{"titel":data, "entry":html_entry})
+        return render(request,"encyclopedia/entry.html",{"title":data, "entry":html_entry})
     else:
         list_entries=util.contains_str(data)
         if list_entries is not None:
             return render(request, "encyclopedia/index.html", {"entries": list_entries})
         else:
             html_entry="<h1><i class='material-icons'>error</i> Sorry, the page you requested was not found.</h1>"
-            return render(request,"encyclopedia/entry.html",{"title":"error", "entry":html_entry})
+            return render(request,"encyclopedia/error.html",{"title":"error", "entry":html_entry})
 
 def new_page(request):
     return render(request, "encyclopedia/new_page.html")
@@ -39,7 +39,7 @@ def new_entry(request):
         return HttpResponseRedirect(f"../{title}")
     else:
         mg="<h1><i class='material-icons'>warning</i> Entry already exists.</h1>"
-        return render(request,"encyclopedia/entry.html",{"title":"prueba","entry":mg})
+        return render(request,"encyclopedia/error.html",{"title":"error","entry":mg})
 
 def edit_entry(request,title):
     if util.exists_entry(title):
@@ -53,7 +53,7 @@ def save_entry(request):
         return HttpResponseRedirect(title)
     else:
         mg="<h1><i class='material-icons'>warning</i>An error has occurred</h1>"
-        return render(request,"encyclopedia/entry.html",{"title":"prueba","entry":mg})
+        return render(request,"encyclopedia/entry.html",{"title":"error","entry":mg})
 
 def random_page(request):
     entries=util.list_entries()

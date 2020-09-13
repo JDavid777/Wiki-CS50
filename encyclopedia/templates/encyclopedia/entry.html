@@ -6,6 +6,6 @@
 {%endblock%}
 
 {% block body%}
-    <a href="{% url "edit" title%}">Edit Markdown</a>
+    <a class="edit"href="{% url "edit" title%}">Edit Entry</a>
     {{entry | safe}}
 {% endblock %}

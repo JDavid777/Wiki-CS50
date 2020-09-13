@@ -1,0 +1,14 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block body %}
+    {{entry | safe}}
+    <div>
+       <img class="alien" src="{% static "encyclopedia/resources/alien.png"%}" width ="30%"alt="">
+       <a class="back" href="{%url 'index'%}"> Take me out!</a>
+    </div>
+ 
+{% endblock body %}

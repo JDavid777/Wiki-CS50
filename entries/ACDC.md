@@ -1,0 +1,2 @@
+# ACDC
+AC/DC are an Australian [rock](/wiki/Rock/) band formed in Sydney in 1973 by Scottish-born brothers Malcolm and Angus Young. Although their music has been variously described as hard rock, blues rock, and heavy metal, the band themselves call it simply "rock and roll".
